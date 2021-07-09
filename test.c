@@ -5,9 +5,18 @@
 #include <sys/wait.h>
 
 void handler()
-{	
+{
+	int exitStatus = 0;	
+	
 	printf("\n\t[PPID=%d]\t[PID=%d]\thandler\n",getppid(),getpid());
-	wait(NULL);
+	
+	wait(&exitStatus);
+	
+	if(WIFEXITED(exitStatus))
+	{
+		printf("\n\t[PPID=%d]\t[PID=%d]\texitValue = %d\n",getppid(),getpid(),WEXITSTATUS(exitStatus));
+	}
+
 	printf("\n\t[PPID=%d]\t[PID=%d]\thandler :: RECEIVED CHILD EXIT\n",getppid(),getpid());
 }
 
@@ -28,6 +37,8 @@ int main(int argc, char* argv[])
 		sleep(10);
 
 		printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD-EXITING\n",getppid(),getpid());
+
+		exit(100);
 	}
 	else
 	{	

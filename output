@@ -1,28 +1,31 @@
+chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ gcc test.c -o test
+chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
+chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
 chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ ./test 
 
-	[9561]	Jul  9 2021	23:07:59	test.c	main	18	START
+	[9870]	Jul  9 2021	23:20:41	test.c	main	27	START
 
-	[9561]	iPid = 9562
+	[9870]	iPid = 9871
 
-	[PPID=3290]	[PID=9561]	PARENT
+	[PPID=3290]	[PID=9870]	PARENT
 
-	[9562]	iPid = 0
+	[9871]	iPid = 0
 
-	[PPID=9561]	[PID=9562]	CHILD
+	[PPID=9870]	[PID=9871]	CHILD
 
-	[PPID=3290]	[PID=9561]	PARENT WATING FOR CHILD
+	[PPID=3290]	[PID=9870]	PARENT WATING FOR CHILD
 
-	[PPID=9561]	[PID=9562]	CHILD-EXITING
+	[PPID=9870]	[PID=9871]	CHILD-EXITING
 
-	[9562]	Jul  9 2021	23:07:59	test.c	main	50	END
+	[PPID=3290]	[PID=9870]	handler
 
-	[PPID=3290]	[PID=9561]	handler
+	[PPID=3290]	[PID=9870]	exitValue = 100
 
-	[PPID=3290]	[PID=9561]	handler :: RECEIVED CHILD EXIT
+	[PPID=3290]	[PID=9870]	handler :: RECEIVED CHILD EXIT
 
-	[PPID=3290]	[PID=9561]	PARENT-EXITING
+	[PPID=3290]	[PID=9870]	PARENT-EXITING
 
-	[9561]	Jul  9 2021	23:07:59	test.c	main	50	END
+	[9870]	Jul  9 2021	23:20:41	test.c	main	62	END
 chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
-chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
+
 
