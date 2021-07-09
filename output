@@ -1,10 +1,20 @@
+chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ ./test 
 
-	[4530]	Jul  9 2021	19:24:31	test.c	main	10	START
+	[8039]	Jul  9 2021	21:59:32	test.c	main	10	START
 
-	[4530]	iPid = 4531
+	[8039]	iPid = 8040
 
-	[PPID=3290]	[PID=4530]	PARENT
+	[PPID=3290]	[PID=8039]	PARENT
 
-	[PPID=3290]	[PID=4530]	PARENT-EXITING
+	[8040]	iPid = 0
 
-	[4530]	Jul  9 2021	19:24:31	test.c	main	37	END
+	[PPID=8039]	[PID=8040]	CHIELD
+
+	[PPID=8039]	[PID=8040]	CHIELD-EXITING
+
+	[8040]	Jul  9 2021	21:59:32	test.c	main	36	END
+^C
+chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
+
+
+
