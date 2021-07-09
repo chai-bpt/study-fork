@@ -4,6 +4,13 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 
+void handler()
+{	
+	printf("\n\t[PPID=%d]\t[PID=%d]\thandler\n",getppid(),getpid());
+	wait(NULL);
+	printf("\n\t[PPID=%d]\t[PID=%d]\thandler :: RECEIVED CHILD EXIT\n",getppid(),getpid());
+}
+
 int main(int argc, char* argv[])
 {
 	int iPid = 0;
@@ -30,11 +37,9 @@ int main(int argc, char* argv[])
 
 		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT WATING FOR CHILD\n",getppid(),getpid());
 		
-		wait(NULL);
+		signal (SIGCHLD, handler);
 
-		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT RECEIVED CHILD EXIT\n",getppid(),getpid());
-
-		sleep(20);
+		sleep(10);
 
 		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT-EXITING\n",getppid(),getpid());
 
