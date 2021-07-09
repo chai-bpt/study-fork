@@ -33,12 +33,14 @@ int main(int argc, char* argv[])
 	{	
 		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\n",getppid(),getpid());
 		
-		sleep(20);
+		sleep(5);
 
 		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT WATING FOR CHILD\n",getppid(),getpid());
 		
 		signal (SIGCHLD, handler);
 
+		sleep(15);
+		
 		sleep(10);
 
 		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT-EXITING\n",getppid(),getpid());

@@ -1,24 +1,28 @@
-chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ gcc test.c -o test
 chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ ./test 
 
-	[9307]	Jul  9 2021	22:59:53	test.c	main	18	START
+	[9561]	Jul  9 2021	23:07:59	test.c	main	18	START
 
-	[9307]	iPid = 9308
+	[9561]	iPid = 9562
 
-	[PPID=3290]	[PID=9307]	PARENT
+	[PPID=3290]	[PID=9561]	PARENT
 
-	[9308]	iPid = 0
+	[9562]	iPid = 0
 
-	[PPID=9307]	[PID=9308]	CHILD
+	[PPID=9561]	[PID=9562]	CHILD
 
-	[PPID=9307]	[PID=9308]	CHILD-EXITING
+	[PPID=3290]	[PID=9561]	PARENT WATING FOR CHILD
 
-	[9308]	Jul  9 2021	22:59:53	test.c	main	49	END
+	[PPID=9561]	[PID=9562]	CHILD-EXITING
 
-	[PPID=3290]	[PID=9307]	PARENT WATING FOR CHILD
+	[9562]	Jul  9 2021	23:07:59	test.c	main	50	END
 
-	[PPID=3290]	[PID=9307]	PARENT-EXITING
+	[PPID=3290]	[PID=9561]	handler
 
-	[9307]	Jul  9 2021	22:59:53	test.c	main	49	END
+	[PPID=3290]	[PID=9561]	handler :: RECEIVED CHILD EXIT
+
+	[PPID=3290]	[PID=9561]	PARENT-EXITING
+
+	[9561]	Jul  9 2021	23:07:59	test.c	main	50	END
+chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
 chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
 
