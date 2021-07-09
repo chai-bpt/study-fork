@@ -1,6 +1,6 @@
 
-	Jul  9 2021	08:15:55	test.c	main	8	START	[3532]
-	Jul  9 2021	08:15:55	test.c	main	10	END	[3532]
+	[3496]	Jul  9 2021	19:03:03	test.c	main	8	START
+	[3496]	Jul  9 2021	19:03:03	test.c	main	10	END
 
-	Jul  9 2021	08:15:55	test.c	main	8	START	[3532]
-	Jul  9 2021	08:15:55	test.c	main	10	END	[3533]
+	[3496]	Jul  9 2021	19:03:03	test.c	main	8	START
+	[3497]	Jul  9 2021	19:03:03	test.c	main	10	END

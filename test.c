@@ -5,9 +5,9 @@
 
 int main(int argc, char* argv[])
 {
-	printf("\n\t%s\t%s\t%s\t%s\t%d\tSTART\t[%d]",__DATE__,__TIME__,__FILE__,__func__,__LINE__,getpid());
+	printf("\n\t[%d]\t%s\t%s\t%s\t%s\t%d\tSTART",getpid(),__DATE__,__TIME__,__FILE__,__func__,__LINE__);
 	fork();
-	printf("\n\t%s\t%s\t%s\t%s\t%d\tEND\t[%d]\n",__DATE__,__TIME__,__FILE__,__func__,__LINE__,getpid());
+	printf("\n\t[%d]\t%s\t%s\t%s\t%s\t%d\tEND\n",getpid(),__DATE__,__TIME__,__FILE__,__func__,__LINE__);
 
         exit(0);
 }
