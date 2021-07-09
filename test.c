@@ -5,7 +5,7 @@
 
 int main(int argc, char* argv[])
 {
-	printf("\n\t[%d]\t%s\t%s\t%s\t%s\t%d\tSTART",getpid(),__DATE__,__TIME__,__FILE__,__func__,__LINE__);
+	printf("\n\t[%d]\t%s\t%s\t%s\t%s\t%d\tSTART\n",getpid(),__DATE__,__TIME__,__FILE__,__func__,__LINE__);
 	fork();
 	printf("\n\t[%d]\t%s\t%s\t%s\t%s\t%d\tEND\n",getpid(),__DATE__,__TIME__,__FILE__,__func__,__LINE__);
 
