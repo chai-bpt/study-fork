@@ -2,6 +2,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <sys/wait.h>
 
 int main(int argc, char* argv[])
 {
@@ -15,20 +16,27 @@ int main(int argc, char* argv[])
 
 	if(iPid == 0)
 	{
-		printf("\n\t[PPID=%d]\t[PID=%d]\tCHIELD\n",getppid(),getpid());
+		printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\n",getppid(),getpid());
 	
-		sleep(20);
+		sleep(10);
 
-		printf("\n\t[PPID=%d]\t[PID=%d]\tCHIELD-EXITING\n",getppid(),getpid());
+		printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD-EXITING\n",getppid(),getpid());
 	}
 	else
-	{
+	{	
 		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\n",getppid(),getpid());
 		
-		while(1)
-		{
-			sleep(10);
-		}
+		sleep(20);
+
+		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT WATING FOR CHILD\n",getppid(),getpid());
+		
+		wait(NULL);
+
+		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT RECEIVED CHILD EXIT\n",getppid(),getpid());
+
+		sleep(20);
+
+		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT-EXITING\n",getppid(),getpid());
 
 	}
 
