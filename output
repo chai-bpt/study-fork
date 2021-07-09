@@ -1,8 +1,12 @@
 
-	[3561]	Jul  9 2021	19:04:57	test.c	main	8	START
+	[3701]	Jul  9 2021	19:10:12	test.c	main	10	START
 
-	[3561]	Jul  9 2021	19:04:57	test.c	main	10	END
+	[3701]	iPid = 3702
 
-	[3561]	Jul  9 2021	19:04:57	test.c	main	8	START
+	[3701]	Jul  9 2021	19:10:12	test.c	main	16	END
 
-	[3562]	Jul  9 2021	19:04:57	test.c	main	10	END
+	[3701]	Jul  9 2021	19:10:12	test.c	main	10	START
+
+	[3702]	iPid = 0
+
+	[3702]	Jul  9 2021	19:10:12	test.c	main	16	END
