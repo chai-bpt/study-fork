@@ -1,16 +1,10 @@
 
-	[3869]	Jul  9 2021	19:16:46	test.c	main	10	START
+	[4530]	Jul  9 2021	19:24:31	test.c	main	10	START
 
-	[3869]	iPid = 3870
+	[4530]	iPid = 4531
 
-	[PPID=3290]	[PID=3869]	PARENT
+	[PPID=3290]	[PID=4530]	PARENT
 
-	[3869]	Jul  9 2021	19:16:46	test.c	main	26	END
+	[PPID=3290]	[PID=4530]	PARENT-EXITING
 
-	[3869]	Jul  9 2021	19:16:46	test.c	main	10	START
-
-	[3870]	iPid = 0
-
-	[PPID=3869]	[PID=3870]	CHIELD
-
-	[3870]	Jul  9 2021	19:16:46	test.c	main	26	END
+	[4530]	Jul  9 2021	19:24:31	test.c	main	37	END
