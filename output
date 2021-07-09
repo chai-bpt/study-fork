@@ -1,12 +1,16 @@
 
-	[3701]	Jul  9 2021	19:10:12	test.c	main	10	START
+	[3869]	Jul  9 2021	19:16:46	test.c	main	10	START
 
-	[3701]	iPid = 3702
+	[3869]	iPid = 3870
 
-	[3701]	Jul  9 2021	19:10:12	test.c	main	16	END
+	[PPID=3290]	[PID=3869]	PARENT
 
-	[3701]	Jul  9 2021	19:10:12	test.c	main	10	START
+	[3869]	Jul  9 2021	19:16:46	test.c	main	26	END
 
-	[3702]	iPid = 0
+	[3869]	Jul  9 2021	19:16:46	test.c	main	10	START
 
-	[3702]	Jul  9 2021	19:10:12	test.c	main	16	END
+	[3870]	iPid = 0
+
+	[PPID=3869]	[PID=3870]	CHIELD
+
+	[3870]	Jul  9 2021	19:16:46	test.c	main	26	END

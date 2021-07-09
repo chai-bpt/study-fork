@@ -13,6 +13,16 @@ int main(int argc, char* argv[])
 
 	printf("\n\t[%d]\tiPid = %d\n",getpid(),iPid);
 
+	if(iPid == 0)
+	{
+		printf("\n\t[PPID=%d]\t[PID=%d]\tCHIELD\n",getppid(),getpid());
+	}
+	else
+	{
+		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\n",getppid(),getpid());
+	}
+
+
 	printf("\n\t[%d]\t%s\t%s\t%s\t%s\t%d\tEND\n",getpid(),__DATE__,__TIME__,__FILE__,__func__,__LINE__);
 
         exit(0);
