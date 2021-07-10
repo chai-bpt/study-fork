@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 
 	printf("\n");
 	iPid = fork();//Copy on write (COW) for iPid
-	if(iPid)
+	if(!iPid)
 		sleep(2);
 
 	printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tiPid = %d\n",getppid(),getpid(),iPid);
