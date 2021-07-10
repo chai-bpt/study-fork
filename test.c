@@ -8,24 +8,26 @@ int main(int argc, char* argv[])
 {
 	int iPid = 0;
 
-	if(0)
-	{
-common_code:
-		printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON CODE::JUMP SUCCESS\n",getppid(),getpid());
-		goto exit;
-	}
+        printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tSTART\n",getppid(),getpid());
+
 	
 	printf("\n");
 	iPid = fork();
 	if(iPid == 0)
 	{ 
 		printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\n",getppid(),getpid());
-		goto common_code;			
+		
+		if(0)
+		{
+child_code:
+			printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD CODE::JUMP SUCCESS\n",getppid(),getpid());
+			goto exit;
+		}			
 	}
 	else
 	{	
 		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\n",getppid(),getpid());
-		goto common_code;	
+		goto child_code;	
 	}    
 	
 exit:
