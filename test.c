@@ -14,14 +14,16 @@ int main(int argc, char* argv[])
 
         printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tSTART\n",getppid(),getpid());
 
+	fd = open("./datafile",0,O_RDONLY);
+
 	printf("\n");
 	iPid = fork();
-	fd = open("./datafile",0,O_RDONLY);
 	if(iPid == 0)
 	{	
 		printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\n",getppid(),getpid());
 		read(fd, &byte, 1);
 		printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\tbyte = %c\n",getppid(),getpid(),byte);
+		close(fd);
 	}
 	else
 	{	
