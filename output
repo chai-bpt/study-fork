@@ -1,18 +1,20 @@
+chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ gcc test.c -o test
+chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ ./test 
 
-	[PPID=2545]	[PID=3912]	COMMON	START
-
-
-	[PPID=3912]	[PID=3913]	CHILD
-
-	[PPID=3912]	[PID=3913]	CHILD	byte = a
-
-	[PPID=3912]	[PID=3913]	COMMON	EXIT
-
-	[PPID=2545]	[PID=3912]	COMMON	START
+	[PPID=2545]	[PID=4007]	COMMON	START
 
 
-	[PPID=2545]	[PID=3912]	PARENT
+	[PPID=2545]	[PID=4007]	PARENT
 
-	[PPID=2545]	[PID=3912]	PARENT	byte = b
+	[PPID=2545]	[PID=4007]	PARENT	byte = a
 
-	[PPID=2545]	[PID=3912]	COMMON	EXIT
+	[PPID=2545]	[PID=4007]	COMMON	EXIT
+chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
+	[PPID=1447]	[PID=4008]	CHILD
+
+	[PPID=1447]	[PID=4008]	CHILD	byte = b
+
+	[PPID=1447]	[PID=4008]	COMMON	EXIT
+
+chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
+

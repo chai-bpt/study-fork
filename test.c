@@ -20,13 +20,13 @@ int main(int argc, char* argv[])
 	iPid = fork();
 	if(iPid == 0)
 	{
+		sleep(1);
 		printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\n",getppid(),getpid());
 		read(fd, &byte, 1);
 		printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\tbyte = %c\n",getppid(),getpid(),byte);
 	}
 	else
 	{	
-		sleep(1);
 		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\n",getppid(),getpid());
 		read(fd, &byte, 1);
 		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\tbyte = %c\n",getppid(),getpid(),byte);
