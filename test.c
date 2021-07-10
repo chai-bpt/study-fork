@@ -10,26 +10,23 @@ int main(int argc, char* argv[])
 
         printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tSTART\n",getppid(),getpid());
 
-	
 	printf("\n");
 	iPid = fork();
 	if(iPid == 0)
 	{ 
 		printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\n",getppid(),getpid());
-		
-		if(0)
-		{
-child_code:
-			printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD CODE::JUMP SUCCESS\n",getppid(),getpid());
-			goto exit;
-		}			
+		goto parent_code;		
 	}
 	else
 	{	
 		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\n",getppid(),getpid());
-		goto child_code;	
+                if(0)
+                {
+parent_code:
+                        printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT CODE::JUMP SUCCESS\n",getppid(),getpid());
+                        goto exit;
+                }
 	}    
-	
 exit:
         printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tEXIT\n",getppid(),getpid());
         exit(0);
