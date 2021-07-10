@@ -14,10 +14,9 @@ int main(int argc, char* argv[])
 
         printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tSTART\n",getppid(),getpid());
 
-	fd = open("./datafile",0,O_RDONLY); 
-
 	printf("\n");
 	iPid = fork();
+	fd = open("./datafile",0,O_RDONLY);
 	if(iPid == 0)
 	{
 		sleep(1);
