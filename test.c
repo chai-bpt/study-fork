@@ -4,75 +4,67 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 
-int terminate = 0;
-void handler()
-{
-	int exitStatus = 0;	
-	
-	printf("\n\t[PPID=%d]\t[PID=%d]\thandler\n",getppid(),getpid());
-	
-	sleep(20);
-
-	wait(&exitStatus);
-	
-	if(WIFEXITED(exitStatus))
-	{
-		printf("\n\t[PPID=%d]\t[PID=%d]\texitValue = %d\n",getppid(),getpid(),WEXITSTATUS(exitStatus));
-	}
-	else if(WIFSIGNALED(exitStatus))
-	{
-		printf("\n\t[PPID=%d]\t[PID=%d]\tsignalValue = %d\n",getppid(),getpid(),WTERMSIG(exitStatus));
-	}
-
-	printf("\n\t[PPID=%d]\t[PID=%d]\thandler :: RECEIVED CHILD EXIT\n",getppid(),getpid());
-
-	terminate = 1;
-}
+int iGlobal = 90;
 
 int main(int argc, char* argv[])
 {
 	int iPid = 0;
+	int iLocal = 10;
 	
-	printf("\n\t[%d]\t%s\t%s\t%s\t%s\t%d\tSTART\n",getpid(),__DATE__,__TIME__,__FILE__,__func__,__LINE__);
-	
-	iPid = fork();
+	printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\tiGlobal = %d\n",getppid(),getpid(),iGlobal);
+	printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\t&iGlobal = %p\n",getppid(),getpid(),&iGlobal);
+	printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\tiLocal = %d\n",getppid(),getpid(),iLocal);
+	printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\t&iLocal = %p\n",getppid(),getpid(),&iLocal);
+	printf("\n");
 
-	printf("\n\t[%d]\tiPid = %d\n",getpid(),iPid);
+	printf("\n");
+	iPid = fork();//Copy on write (COW) for iPid
+	if(iPid)
+		sleep(2);
+
+	printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tiPid = %d\n",getppid(),getpid(),iPid);
+	iGlobal++;//COW
+	iLocal++;//COW
+       	printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tiGlobal = %d\n",getppid(),getpid(),iGlobal);
+        printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\t&iGlobal = %p\n",getppid(),getpid(),&iGlobal);
+        printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tiLocal = %d\n",getppid(),getpid(),iLocal);
+        printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\t&iLocal = %p\n",getppid(),getpid(),&iLocal);
+	printf("\n");
+	sleep(2);
+	
 
 	if(iPid == 0)
 	{
-		printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\n",getppid(),getpid());
-	
-		printf("\n\t[PPID=%d]\t[PID=%d]\tKILL CHILD\n",getppid(),getpid());
-
-		while(1)
-		{
-			sleep(1);
-		}
-
+	       	iGlobal++;
+        	iLocal++;
+        	printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\tiGlobal = %d\n",getppid(),getpid(),iGlobal);
+        	printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\t&iGlobal = %p\n",getppid(),getpid(),&iGlobal);
+        	printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\tiLocal = %d\n",getppid(),getpid(),iLocal);
+      	  	printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\t&iLocal = %p\n",getppid(),getpid(),&iLocal);
+		printf("\n");
+		sleep(2);
 	}
 	else
 	{	
-		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\n",getppid(),getpid());
-		
-		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT WATING FOR CHILD\n",getppid(),getpid());
-		
-		signal (SIGCHLD, handler);
-		
-		while(terminate == 0)
-		{
-			sleep(1);		
-			sleep(1);
-		}
-
-		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT-EXITING\n",getppid(),getpid());
-
-		sleep(10);
-
+		iGlobal++;
+                iLocal++;
+                printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\tiGlobal = %d\n",getppid(),getpid(),iGlobal);
+                printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\t&iGlobal = %p\n",getppid(),getpid(),&iGlobal);
+                printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\tiLocal = %d\n",getppid(),getpid(),iLocal);
+	        printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\t&iLocal = %p\n",getppid(),getpid(),&iLocal);
+		printf("\n");
+		sleep(2);
 	}
 
+        iGlobal++;
+        iLocal++;
+        printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tiGlobal = %d\n",getppid(),getpid(),iGlobal);
+        printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\t&iGlobal = %p\n",getppid(),getpid(),&iGlobal);
+        printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tiLocal = %d\n",getppid(),getpid(),iLocal);
+        printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\t&iLocal = %p\n",getppid(),getpid(),&iLocal);
+	printf("\n");
+	sleep(2);
 
-	printf("\n\t[%d]\t%s\t%s\t%s\t%s\t%d\tEND\n",getpid(),__DATE__,__TIME__,__FILE__,__func__,__LINE__);
-
+        printf("\n\t[PPID=%d]\t[PID=%d]\t\tEXIT\n",getppid(),getpid());
         exit(0);
 }

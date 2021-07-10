@@ -1,29 +1,82 @@
-chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ ./test 
 
-	[5367]	Jul 10 2021	09:02:11	test.c	main	36	START
+	[PPID=2183]	[PID=4700]	PARENT	iGlobal = 90
 
-	[5367]	iPid = 5368
+	[PPID=2183]	[PID=4700]	PARENT	&iGlobal = 0x5555824e1010
 
-	[PPID=2096]	[PID=5367]	PARENT
+	[PPID=2183]	[PID=4700]	PARENT	iLocal = 10
 
-	[PPID=2096]	[PID=5367]	PARENT WATING FOR CHILD
-
-	[5368]	iPid = 0
-
-	[PPID=5367]	[PID=5368]	CHILD
-
-	[PPID=5367]	[PID=5368]	KILL CHILD
-
-	[PPID=2096]	[PID=5367]	handler
-
-	[PPID=2096]	[PID=5367]	signalValue = 9
-
-	[PPID=2096]	[PID=5367]	handler :: RECEIVED CHILD EXIT
-
-	[PPID=2096]	[PID=5367]	PARENT-EXITING
-
-	[5367]	Jul 10 2021	09:02:11	test.c	main	75	END
-chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
+	[PPID=2183]	[PID=4700]	PARENT	&iLocal = 0x7fffee46e520
 
 
 
+	[PPID=4700]	[PID=4701]	COMMON	iPid = 0
+
+	[PPID=4700]	[PID=4701]	COMMON	iGlobal = 91
+
+	[PPID=4700]	[PID=4701]	COMMON	&iGlobal = 0x5555824e1010
+
+	[PPID=4700]	[PID=4701]	COMMON	iLocal = 11
+
+	[PPID=4700]	[PID=4701]	COMMON	&iLocal = 0x7fffee46e520
+
+
+	[PPID=4700]	[PID=4701]	CHILD	iGlobal = 92
+
+	[PPID=4700]	[PID=4701]	CHILD	&iGlobal = 0x5555824e1010
+
+	[PPID=4700]	[PID=4701]	CHILD	iLocal = 12
+
+	[PPID=4700]	[PID=4701]	CHILD	&iLocal = 0x7fffee46e520
+
+
+	[PPID=4700]	[PID=4701]	COMMON	iGlobal = 93
+
+	[PPID=4700]	[PID=4701]	COMMON	&iGlobal = 0x5555824e1010
+
+	[PPID=4700]	[PID=4701]	COMMON	iLocal = 13
+
+	[PPID=4700]	[PID=4701]	COMMON	&iLocal = 0x7fffee46e520
+
+
+	[PPID=4700]	[PID=4701]		EXIT
+
+	[PPID=2183]	[PID=4700]	PARENT	iGlobal = 90
+
+	[PPID=2183]	[PID=4700]	PARENT	&iGlobal = 0x5555824e1010
+
+	[PPID=2183]	[PID=4700]	PARENT	iLocal = 10
+
+	[PPID=2183]	[PID=4700]	PARENT	&iLocal = 0x7fffee46e520
+
+
+
+	[PPID=2183]	[PID=4700]	COMMON	iPid = 4701
+
+	[PPID=2183]	[PID=4700]	COMMON	iGlobal = 91
+
+	[PPID=2183]	[PID=4700]	COMMON	&iGlobal = 0x5555824e1010
+
+	[PPID=2183]	[PID=4700]	COMMON	iLocal = 11
+
+	[PPID=2183]	[PID=4700]	COMMON	&iLocal = 0x7fffee46e520
+
+
+	[PPID=2183]	[PID=4700]	PARENT	iGlobal = 92
+
+	[PPID=2183]	[PID=4700]	PARENT	&iGlobal = 0x5555824e1010
+
+	[PPID=2183]	[PID=4700]	PARENT	iLocal = 12
+
+	[PPID=2183]	[PID=4700]	PARENT	&iLocal = 0x7fffee46e520
+
+
+	[PPID=2183]	[PID=4700]	COMMON	iGlobal = 93
+
+	[PPID=2183]	[PID=4700]	COMMON	&iGlobal = 0x5555824e1010
+
+	[PPID=2183]	[PID=4700]	COMMON	iLocal = 13
+
+	[PPID=2183]	[PID=4700]	COMMON	&iLocal = 0x7fffee46e520
+
+
+	[PPID=2183]	[PID=4700]		EXIT

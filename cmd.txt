@@ -1,3 +1,2 @@
 gcc test.c -o test
-ps -ef
-kill -9 <PID>
+./test > output
