@@ -4,38 +4,31 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 
-int func(void)
-{
-        printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tIN_FUNC\n",getppid(),getpid());
-}
-
 int main(int argc, char* argv[])
 {
 	int iPid = 0;
 
-	printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\n",getppid(),getpid());
-	func();
-
-	printf("\n");
-	iPid = fork();//Copy on write (COW) for iPid
+	if(0)
+	{
+common_code:
+		printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON CODE::JUMP SUCCESS\n",getppid(),getpid());
+		goto exit;
+	}
 	
-	printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\n",getppid(),getpid());
-	func();	
-
+	printf("\n");
+	iPid = fork();
 	if(iPid == 0)
 	{ 
 		printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\n",getppid(),getpid());
-		func();
+		goto common_code;			
 	}
 	else
 	{	
 		printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\n",getppid(),getpid());
-		func();
+		goto common_code;	
 	}    
 	
-	printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\n",getppid(),getpid());
-	func();	
-
+exit:
         printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tEXIT\n",getppid(),getpid());
         exit(0);
 }
