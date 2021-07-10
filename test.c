@@ -19,8 +19,6 @@ int main(int argc, char* argv[])
 
 	printf("\n");
 	iPid = fork();//Copy on write (COW) for iPid
-	if(!iPid)
-		sleep(2);
 
 	printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tiPid = %d\n",getppid(),getpid(),iPid);
 	iGlobal++;//COW
@@ -30,8 +28,7 @@ int main(int argc, char* argv[])
         printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tiLocal = %d\n",getppid(),getpid(),iLocal);
         printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\t&iLocal = %p\n",getppid(),getpid(),&iLocal);
 	printf("\n");
-	sleep(2);
-	
+		
 
 	if(iPid == 0)
 	{
@@ -42,7 +39,6 @@ int main(int argc, char* argv[])
         	printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\tiLocal = %d\n",getppid(),getpid(),iLocal);
       	  	printf("\n\t[PPID=%d]\t[PID=%d]\tCHILD\t&iLocal = %p\n",getppid(),getpid(),&iLocal);
 		printf("\n");
-		sleep(2);
 	}
 	else
 	{	
@@ -53,7 +49,6 @@ int main(int argc, char* argv[])
                 printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\tiLocal = %d\n",getppid(),getpid(),iLocal);
 	        printf("\n\t[PPID=%d]\t[PID=%d]\tPARENT\t&iLocal = %p\n",getppid(),getpid(),&iLocal);
 		printf("\n");
-		sleep(2);
 	}
 
         iGlobal++;
@@ -63,7 +58,7 @@ int main(int argc, char* argv[])
         printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\tiLocal = %d\n",getppid(),getpid(),iLocal);
         printf("\n\t[PPID=%d]\t[PID=%d]\tCOMMON\t&iLocal = %p\n",getppid(),getpid(),&iLocal);
 	printf("\n");
-	sleep(2);
+	
 
         printf("\n\t[PPID=%d]\t[PID=%d]\t\tEXIT\n",getppid(),getpid());
         exit(0);

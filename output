@@ -1,77 +1,82 @@
 
-chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ ./test 
+	[PPID=2183]	[PID=5108]	PARENT	iGlobal = 90
 
-	[PPID=2183]	[PID=4783]	PARENT	iGlobal = 90
+	[PPID=2183]	[PID=5108]	PARENT	&iGlobal = 0x559bec01b010
 
-	[PPID=2183]	[PID=4783]	PARENT	&iGlobal = 0x561fe963c010
+	[PPID=2183]	[PID=5108]	PARENT	iLocal = 10
 
-	[PPID=2183]	[PID=4783]	PARENT	iLocal = 10
-
-	[PPID=2183]	[PID=4783]	PARENT	&iLocal = 0x7fffbc8c8ef0
+	[PPID=2183]	[PID=5108]	PARENT	&iLocal = 0x7ffce42e29c0
 
 
 
-	[PPID=2183]	[PID=4783]	COMMON	iPid = 4784
+	[PPID=2183]	[PID=5108]	COMMON	iPid = 5109
 
-	[PPID=2183]	[PID=4783]	COMMON	iGlobal = 91
+	[PPID=2183]	[PID=5108]	COMMON	iGlobal = 91
 
-	[PPID=2183]	[PID=4783]	COMMON	&iGlobal = 0x561fe963c010
+	[PPID=2183]	[PID=5108]	COMMON	&iGlobal = 0x559bec01b010
 
-	[PPID=2183]	[PID=4783]	COMMON	iLocal = 11
+	[PPID=2183]	[PID=5108]	COMMON	iLocal = 11
 
-	[PPID=2183]	[PID=4783]	COMMON	&iLocal = 0x7fffbc8c8ef0
-
-
-	[PPID=2183]	[PID=4783]	PARENT	iGlobal = 92
-
-	[PPID=2183]	[PID=4783]	PARENT	&iGlobal = 0x561fe963c010
+	[PPID=2183]	[PID=5108]	COMMON	&iLocal = 0x7ffce42e29c0
 
 
-	[PPID=2183]	[PID=4783]	PARENT	iLocal = 12
+	[PPID=2183]	[PID=5108]	PARENT	iGlobal = 92
 
-	[PPID=4783]	[PID=4784]	COMMON	iPid = 0
-	[PPID=2183]	[PID=4783]	PARENT	&iLocal = 0x7fffbc8c8ef0
+	[PPID=2183]	[PID=5108]	PARENT	&iGlobal = 0x559bec01b010
 
+	[PPID=2183]	[PID=5108]	PARENT	iLocal = 12
 
-	[PPID=4783]	[PID=4784]	COMMON	iGlobal = 91
-
-	[PPID=4783]	[PID=4784]	COMMON	&iGlobal = 0x561fe963c010
-
-	[PPID=4783]	[PID=4784]	COMMON	iLocal = 11
-
-	[PPID=4783]	[PID=4784]	COMMON	&iLocal = 0x7fffbc8c8ef0
+	[PPID=2183]	[PID=5108]	PARENT	&iLocal = 0x7ffce42e29c0
 
 
+	[PPID=2183]	[PID=5108]	COMMON	iGlobal = 93
 
-	[PPID=4783]	[PID=4784]	CHILD	iGlobal = 92
-	[PPID=2183]	[PID=4783]	COMMON	iGlobal = 93
+	[PPID=2183]	[PID=5108]	COMMON	&iGlobal = 0x559bec01b010
 
-	[PPID=4783]	[PID=4784]	CHILD	&iGlobal = 0x561fe963c010
+	[PPID=2183]	[PID=5108]	COMMON	iLocal = 13
 
-
-	[PPID=2183]	[PID=4783]	COMMON	&iGlobal = 0x561fe963c010
-	[PPID=4783]	[PID=4784]	CHILD	iLocal = 12
+	[PPID=2183]	[PID=5108]	COMMON	&iLocal = 0x7ffce42e29c0
 
 
-	[PPID=2183]	[PID=4783]	COMMON	iLocal = 13
-	[PPID=4783]	[PID=4784]	CHILD	&iLocal = 0x7fffbc8c8ef0
+	[PPID=2183]	[PID=5108]		EXIT
 
+	[PPID=2183]	[PID=5108]	PARENT	iGlobal = 90
 
-	[PPID=2183]	[PID=4783]	COMMON	&iLocal = 0x7fffbc8c8ef0
+	[PPID=2183]	[PID=5108]	PARENT	&iGlobal = 0x559bec01b010
+
+	[PPID=2183]	[PID=5108]	PARENT	iLocal = 10
+
+	[PPID=2183]	[PID=5108]	PARENT	&iLocal = 0x7ffce42e29c0
 
 
 
-	[PPID=2183]	[PID=4783]		EXIT
-	[PPID=4783]	[PID=4784]	COMMON	iGlobal = 93
+	[PPID=5108]	[PID=5109]	COMMON	iPid = 0
 
-	[PPID=4783]	[PID=4784]	COMMON	&iGlobal = 0x561fe963c010
+	[PPID=5108]	[PID=5109]	COMMON	iGlobal = 91
 
-	[PPID=4783]	[PID=4784]	COMMON	iLocal = 13
+	[PPID=5108]	[PID=5109]	COMMON	&iGlobal = 0x559bec01b010
 
-	[PPID=4783]	[PID=4784]	COMMON	&iLocal = 0x7fffbc8c8ef0
+	[PPID=5108]	[PID=5109]	COMMON	iLocal = 11
 
-chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
-	[PPID=1459]	[PID=4784]		EXIT
+	[PPID=5108]	[PID=5109]	COMMON	&iLocal = 0x7ffce42e29c0
 
-chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
 
+	[PPID=5108]	[PID=5109]	CHILD	iGlobal = 92
+
+	[PPID=5108]	[PID=5109]	CHILD	&iGlobal = 0x559bec01b010
+
+	[PPID=5108]	[PID=5109]	CHILD	iLocal = 12
+
+	[PPID=5108]	[PID=5109]	CHILD	&iLocal = 0x7ffce42e29c0
+
+
+	[PPID=5108]	[PID=5109]	COMMON	iGlobal = 93
+
+	[PPID=5108]	[PID=5109]	COMMON	&iGlobal = 0x559bec01b010
+
+	[PPID=5108]	[PID=5109]	COMMON	iLocal = 13
+
+	[PPID=5108]	[PID=5109]	COMMON	&iLocal = 0x7ffce42e29c0
+
+
+	[PPID=5108]	[PID=5109]		EXIT
