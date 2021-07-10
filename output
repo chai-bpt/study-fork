@@ -1,21 +1,18 @@
-chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ ./test 
 
-	[PPID=2545]	[PID=4165]	COMMON	START
-
-
-	[PPID=2545]	[PID=4165]	PARENT
-
-	[PPID=2545]	[PID=4165]	PARENT	byte = a
-
-	[PPID=2545]	[PID=4165]	COMMON	EXIT
-chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
-	[PPID=1447]	[PID=4166]	CHILD
-
-	[PPID=1447]	[PID=4166]	CHILD	byte = a
-
-	[PPID=1447]	[PID=4166]	COMMON	EXIT
-
-chaitanya@chaitanya-HP-Laptop-14-bs0xx:~/work/linking/study-fork$ 
+	[PPID=2545]	[PID=4351]	COMMON	START
 
 
+	[PPID=4351]	[PID=4352]	CHILD
 
+	[PPID=4351]	[PID=4352]	CHILD	byte = a
+
+	[PPID=4351]	[PID=4352]	COMMON	EXIT
+
+	[PPID=2545]	[PID=4351]	COMMON	START
+
+
+	[PPID=2545]	[PID=4351]	PARENT
+
+	[PPID=2545]	[PID=4351]	PARENT	byte = a
+
+	[PPID=2545]	[PID=4351]	COMMON	EXIT
